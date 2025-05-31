@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Labirinto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Gerador de Labirinto</h1>
+
+  <label for="sizeRange">Tamanho do labirinto: <span id="sizeLabel">5</span>x<span id="sizeLabel2">5</span></label><br>
+  <input type="range" id="sizeRange" min="2" max="20" value="5">
+  <br><br>
+  <button id="btn_random">Randomizar</button>
+  <button id="btn_conclude">Concluir</button>
+
+  <div id="grid" class="grid"></div>
+  <div id="result"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
