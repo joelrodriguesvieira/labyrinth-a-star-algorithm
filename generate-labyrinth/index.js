@@ -128,12 +128,28 @@ function randomizeMaze() {
 }
 
 function finalizar() {
+
+  const symbolMap = {
+    1: ".",
+    2: "?",
+    3: "_",
+    null: "#",
+  };
+
+  const symbolMatrix = gridData.map((row, rowIndex) =>
+    row.map((cell, colIndex) => {
+      if (rowIndex === 0 && colIndex === 0) return "S";
+      if (rowIndex === gridSize - 1 && colIndex === gridSize - 1) return "E";
+      return symbolMap[cell];
+    })
+  );
+
   fetch("http://localhost:3000/save-matrix", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(gridData),
+    body: JSON.stringify(symbolMatrix),
   })
     .then((response) => response.text())
     .then((message) => {
