@@ -98,18 +98,20 @@ function randomizeMaze() {
         gridData[row][col] = 1;
       } else {
         const rand = Math.random();
-        if (rand < 0.15) {
+        if (rand < 0.40) {
+          // Parede (40%)
           gridData[row][col] = null;
-        } else if (rand < 0.4) {
+        } else if (rand < 0.60) {
           cell.classList.add("floor");
           gridData[row][col] = 1;
-        } else if (rand < 0.7) {
+        } else if (rand < 0.80) {
           cell.classList.add("forest");
           gridData[row][col] = 2;
         } else {
           cell.classList.add("mud");
           gridData[row][col] = 3;
         }
+        
 
         if (gridData[row][col] === null) {
           if (isSurroundedByWalls(row, col, gridData)) {
