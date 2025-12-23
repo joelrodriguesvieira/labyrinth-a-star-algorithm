@@ -61,7 +61,7 @@ class Labirinto:
         while lista_aberta:
             no_atual = heapq.heappop(lista_aberta)
 
-            # print(f"Visitando: {no_atual.posicao} | Custo atual: {no_atual.custo_g}, Heurística h: {no_atual.custo_h}")
+            print(f"Visitando: {no_atual.posicao} | Custo atual: {no_atual.custo_g}, Heurística h: {no_atual.custo_h}")
             
             if no_atual.posicao == fim_no.posicao:
                 caminho = []
@@ -86,11 +86,15 @@ class Labirinto:
         return None
 
 matriz = [
-  ["S", ".", ".", "_", "_"],
-  ["_", "_", ".", "_", "_"],
-  [".", ".", ".", "_", "_"],
-  [".", "_", "_", "_", "_"],
-  [".", ".", ".", ".", "E"]
+    ["S", ".", ".", ".", "?", ".", ".", ".", "."],
+    [".", "#", "#", "#", ".", "_", "_", "#", "."],
+    [".", ".", "?", ".", ".", "_", ".", "#", "."],
+    ["#", "#", ".", "#", ".", "_", ".", "#", "."],
+    [".", ".", ".", "#", ".", "?", ".", ".", "."],
+    [".", "#", ".", "#", "#", "?", "#", "#", "."],
+    [".", "#", ".", ".", ".", ".", ".", "#", "."],
+    [".", "#", "#", "#", "#", "#", ".", "#", "."],
+    [".", ".", ".", "?", ".", ".", ".", ".", "E"]
 ]
 
 labirinto = Labirinto(matriz)
